@@ -2,9 +2,8 @@
 
 class SearchController < ApplicationController
   def index
-    @view_nation = params[:nation].split('+').join(' ').capitalize
-    # require 'pry'; binding.pry
-    members = AvatarFacade.nation(@view_nation)
+    @nation = params[:nation].split('+').join(' ').capitalize
+    members = AvatarFacade.nation(@nation)
     @population = members.count
     @characters = members.first(25)
   end
