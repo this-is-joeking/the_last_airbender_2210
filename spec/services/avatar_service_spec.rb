@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AvatarService do
   before(:each) do
-    stub_request(:get, 'https://last-airbender-api.fly.dev/api/v1/characters?affiliation=fire%20nation&page=1&perPage=1000')
+    stub_request(:get, 'https://last-airbender-api.fly.dev/api/v1/characters?affiliation=Fire%20nation&perPage=0')
       .to_return(status: 200, body: File.read('spec/fixtures/fire_nation_members.json'))
   end
 
   describe '#nation()' do
     it 'returns character details for the nation given' do
-      response = AvatarService.nation('fire+nation')
+      response = AvatarService.nation('Fire nation')
 
       expect(response).to be_a Array
       response.each do |character_data|

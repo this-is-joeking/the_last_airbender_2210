@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Character do
   it 'exists with attributes' do
     character_data = {
-      "_id": '5cf5679a915ecad153ab6976',
-      "allies": [
+      _id: '5cf5679a915ecad153ab6976',
+      allies: [
         'Zuko',
         ''
       ],
-      "enemies": [
+      enemies: [
         'Ozai'
       ],
-      "photoUrl": 'https://vignette.wikia.nocookie.net/avatar/images/c/c1/Iroh_smiling.png/revision/latest?cb=20130626131914',
-      "name": 'Iroh',
-      "affiliation": ' Fire Nation Fire Nation military (formerly) Fire Nation Royal Family Jasmine Dragon Order of the White Lotus Spirit World'
+      photoUrl: 'https://vignette.wikia.nocookie.net/avatar/images/c/c1/Iroh_smiling.png/revision/latest?cb=20130626131914',
+      name: 'Iroh',
+      affiliation: ' Fire Nation Fire Nation military (formerly) Fire Nation Royal Family Jasmine Dragon Order of the White Lotus Spirit World'
     }
 
     character = Character.new(character_data)
